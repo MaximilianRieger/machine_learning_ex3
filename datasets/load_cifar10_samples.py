@@ -10,6 +10,9 @@ def unpickle(file):
 def load_cifar10_samples():
     import os
     import numpy as np
+    # get project directory
+    prvs_dir = os.getcwd()
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     data_dir = os.path.join(os.getcwd(), 'cifar-10-batches-py')
     train_data = None
     train_labels = []
@@ -23,6 +26,7 @@ def load_cifar10_samples():
     test_data_dic = unpickle(data_dir + "/test_batch")
     test_data = test_data_dic[b'data']
     test_labels = test_data_dic[b'labels']
+    os.chdir(prvs_dir)
     return train_data, train_labels, test_data, test_labels
 
 def save_samples_as_images():
