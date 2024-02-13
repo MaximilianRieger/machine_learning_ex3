@@ -1,4 +1,5 @@
 # load cifar-10 histogram data and train a svm classifier
+import os
 import time
 
 import numpy as np
@@ -11,22 +12,34 @@ import matplotlib.pyplot as plt
 label2string = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
 if __name__ == '__main__':
-    # load the histograms
-    train_hist = np.load('train_hist.npy')
-    train_labels = np.load('train_labels.npy')
     test_hist = np.load('test_hist.npy')
     test_labels = np.load('test_labels.npy')
+    # check if a model is already trained
+    if not os.path.exists(os.path.join(os.getcwd(), 'svm_model.joblib')):
+        # load the training histograms
+        train_hist = np.load('train_hist.npy')
+        train_labels = np.load('train_labels.npy')
 
-    # train a svm classifier
-    print('Training SVM...')
-    # time the training
-    start = time.time()
-    clf = LinearSVC()
-    clf.fit(train_hist, train_labels)
-    # clf.fit(train_hist[0:10_000], train_labels[0:10_000])
-    end = time.time()
-    print('SVM trained')
-    print(f'Training time: {end - start:.2f} seconds')
+        # train a svm classifier
+        print('Training SVM...')
+        # time the training
+        start = time.time()
+        clf = LinearSVC(random_state=42, max_iter=10_000, verbose=1)
+        clf.fit(train_hist, train_labels)
+        # clf.fit(train_hist[0:10_000], train_labels[0:10_000])
+        end = time.time()
+        print('SVM trained')
+        print(f'Training time: {end - start:.2f} seconds')
+
+        # save the model
+        from joblib import dump
+        dump(clf, 'svm_model.joblib')
+    else:
+        print('Loading SVM model...')
+        from joblib import load
+        clf = load('svm_model.joblib')
+        print('SVM model loaded')
+
     # predict the test data
     pred = clf.predict(test_hist)
 
@@ -44,4 +57,6 @@ if __name__ == '__main__':
     # add legend to the plot
     plt.legend(label2string, loc='center left', bbox_to_anchor=(1, 0.5))
     plt.show()
+    # save the confusion matrix
+    plt.savefig('confusion_matrix.png')
 
