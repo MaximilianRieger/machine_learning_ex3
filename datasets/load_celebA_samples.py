@@ -6,6 +6,8 @@ import pandas as pd
 #import image reading library
 from matplotlib import pyplot as plt
 
+chosen_attributes = ['Smiling', 'Blond_Hair', 'Black_Hair', 'Brown_Hair', 'Gray_Hair', 'Pale_Skin', 'Narrow_Eyes', 'Rosy_Cheeks', 'Eyeglasses', 'Wearing_Lipstick']
+
 def load_celebA_samples():
     # get project directory
     prvs_dir = os.getcwd()
@@ -62,18 +64,21 @@ if __name__ == '__main__':
     print(train_labels.shape)
     print(test_img_names.shape)
     print(test_labels.shape)
-    plt.figure()
-    plt.title('First 10 images')
+    plt.figure(figsize=(10, 5))
+    plt.title('Class examples from the training set')
     # get data directory
     data_dir = os.path.join(os.getcwd(), 'celebA')
     # plot one image from each class in the training set in single figure
     imgs = train_img_names[::5000]
     labels = train_labels[::5000]
+    axes = []
     for i, data in enumerate(zip(imgs, labels)):
         img, label = data
         img = plt.imread(img)
-        plt.subplot(2, 5, i + 1)
+        ax = plt.subplot(2, 5, i + 1)
         plt.imshow(img)
-        plt.title(f'Class: {label}')
+        plt.title(f'{chosen_attributes[label]}')
         plt.axis('off')
+        axes.append(ax)
+    # add legend
     plt.show()

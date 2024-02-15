@@ -39,7 +39,7 @@ if __name__ == '__main__':
         # get the image names
         img_names = sample['image_id'].values
 
-        # !!! Do not save the images, just save the names of the images in the csv file
+        # !!! Do not copy the images, just save the names of the images in the csv file
 
         # save the images
         # save_dir = os.path.join(data_dir, "train", attribute)
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         sample = rows.sample(1000, random_state=42)
         # get the image names
         img_names = sample['image_id'].values
-        # !!! Do not save the images, just save the names of the images in the csv file
+        # !!! Do not copy the images, just save the names of the images in the csv file
 
         # save the images
         # save_dir = os.path.join(data_dir, "test", attribute)
