@@ -38,14 +38,17 @@ if __name__ == '__main__':
         sample = rows.sample(5000, random_state=42)
         # get the image names
         img_names = sample['image_id'].values
+
+        # !!! Do not save the images, just save the names of the images in the csv file
+
         # save the images
-        save_dir = os.path.join(data_dir, "train", attribute)
-        os.makedirs(save_dir, exist_ok=True)
+        # save_dir = os.path.join(data_dir, "train", attribute)
+        # os.makedirs(save_dir, exist_ok=True)
         # make progress bar
-        progress = tqdm.tqdm(img_names, desc=f'{attribute}', unit='image')
-        for img_name in progress:
-            # copy the images to the new directory
-            copyFile(os.path.join(data_dir, "img_align_celeba", img_name), os.path.join(save_dir, img_name))
+        # progress = tqdm.tqdm(img_names, desc=f'{attribute}', unit='image')
+        # for img_name in progress:
+        #     # copy the images to the new directory
+        #     copyFile(os.path.join(data_dir, "img_align_celeba", img_name), os.path.join(save_dir, img_name))
 
         attributes_image_dict.update({attribute: img_names})
 
@@ -64,13 +67,15 @@ if __name__ == '__main__':
         sample = rows.sample(1000, random_state=42)
         # get the image names
         img_names = sample['image_id'].values
+        # !!! Do not save the images, just save the names of the images in the csv file
+
         # save the images
-        save_dir = os.path.join(data_dir, "test", attribute)
-        os.makedirs(save_dir, exist_ok=True)
-        progress = tqdm.tqdm(img_names, desc=f'{attribute}', unit='image')
-        for img_name in progress:
-            # copy the images to the new directory
-            copyFile(os.path.join(data_dir, "img_align_celeba", img_name), os.path.join(save_dir, img_name))
+        # save_dir = os.path.join(data_dir, "test", attribute)
+        # os.makedirs(save_dir, exist_ok=True)
+        # progress = tqdm.tqdm(img_names, desc=f'{attribute}', unit='image')
+        # for img_name in progress:
+        #     # copy the images to the new directory
+        #     copyFile(os.path.join(data_dir, "img_align_celeba", img_name), os.path.join(save_dir, img_name))
 
 
         attributes_image_dict.update({attribute: img_names})
