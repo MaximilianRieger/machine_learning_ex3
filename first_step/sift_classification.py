@@ -3,7 +3,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 import cv2 as cv
 import numpy as np
-from sklearn import svm
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -41,7 +41,7 @@ def train_classifier(training_data, kmeans):
             X_train.append(histogram)
             y_train.append(label)
 
-    clf = svm.SVC()
+    clf = KNeighborsClassifier(n_neighbors=25)# .SVC()
     clf.fit(X_train, y_train)
     return clf
 def test_classifier(test_data, clf, kmeans):
