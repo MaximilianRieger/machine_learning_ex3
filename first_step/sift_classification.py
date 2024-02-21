@@ -36,9 +36,10 @@ def train_classifier(training_data, kmeans):
 
     for img, label in training_data:
         descriptors = extract_sift_features(img)
-        histogram = build_bovw_histogram(kmeans, descriptors)
-        X_train.append(histogram)
-        y_train.append(label)
+        if descriptors is not None:
+            histogram = build_bovw_histogram(kmeans, descriptors)
+            X_train.append(histogram)
+            y_train.append(label)
 
     clf = svm.SVC()
     clf.fit(X_train, y_train)
@@ -49,9 +50,10 @@ def test_classifier(test_data, clf, kmeans):
 
     for img, label in test_data:
         descriptors = extract_sift_features(img)
-        histogram = build_bovw_histogram(kmeans, descriptors)
-        X_test.append(histogram)
-        y_true.append(label)
+        if descriptors is not None:
+            histogram = build_bovw_histogram(kmeans, descriptors)
+            X_test.append(histogram)
+            y_true.append(label)
 
     y_pred = clf.predict(X_test)
 
@@ -79,11 +81,13 @@ if __name__ == "__main__":
     test_data = reshape(test_data)
 
     #descriptors
-    descriptors = []
-    for img in train_data:
-        desc = extract_sift_features(img)
-        if desc is not None:  # Check if extract_sift_features() returns a valid descriptor
-            descriptors.extend(desc)
+    descriptors = np.load('descriptors.npy')
+    #for img in train_data:
+    #    desc = extract_sift_features(img)
+    #    if desc is not None:  # Check if extract_sift_features() returns a valid descriptor
+    #        descriptors.extend(desc)
+
+    #np.save('descriptors.npy', np.array(descriptors))
 
 
     k = 100  #Number of clusters
@@ -92,7 +96,7 @@ if __name__ == "__main__":
     clf = train_classifier(zip(train_data, train_labels), kmeans)
 
     # testing
-    test_classifier(test_data, clf, kmeans)
+    test_classifier(zip(test_data, test_labels), clf, kmeans)
 
     print('done')
 
