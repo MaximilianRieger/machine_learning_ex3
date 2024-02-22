@@ -38,14 +38,14 @@ if __name__ == '__main__':
     # print confusion matrix
 
     cm = confusion_matrix(test_labels, pred)
-    plt.figure()
+    fig = plt.figure()
     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', cbar=False)
     plt.xlabel('Predicted')
     plt.ylabel('True')
     plt.title('Confusion Matrix')
     # add legend to the plot
     plt.legend(label2string, loc='center left', bbox_to_anchor=(1, 0.5))
-    plt.show()
     # save the confusion matrix
-    plt.savefig('confusion_matrix_knn.png')
+    fig.savefig('confusion_matrix_knn.png')
+    plt.show()
 
