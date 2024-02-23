@@ -8,6 +8,7 @@ from second_step.celebA_trainingrun import TrainingRun as CelebATrainingRun
 
 datasets = ['cifar10', 'celebA']
 models = ['simple', 'resnet', 'resnet50']
+criterions = ['cross_entropy', 'mse']
 
 def run_experiment(args=None):
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s ')
@@ -20,9 +21,10 @@ def run_experiment(args=None):
         parser.add_argument('-w', '--workers', default=-1, type=int, help='Count of max Workers to use')
         parser.add_argument('-m', '--model', default='simple', required=True, type=str, choices=models)
         parser.add_argument('-d', '--dataset', default='breast_cancer', required=True, type=str, choices=datasets)
+        parser.add_argument('-c', '--criterion', default='mse',  type=str, choices=criterions)
         parser.add_argument('-e', '--epochs', default=10, type=int, help='number of epochs to train')
         parser.add_argument('-b', '--batch_size', default=256, type=int, help='batch size')
-        parser.add_argument('-lr', '--learning_rate', default=0.01, type=float, help='learning rate')
+        parser.add_argument('-lr', '--learning_rate', default=0.001, type=float, help='learning rate')
         parser.add_argument( '--log_interval', default=-1, type=int, help='log interval')
         parser.add_argument('-v', '--verbose', action='store_true', default=False, help='verbose')
         args = parser.parse_args()
@@ -50,6 +52,10 @@ def run_experiment(args=None):
 
     logging.info(f"device: {args.device}")
     logging.info(f"model: {args.model}")
+    logging.info(f"epochs: {args.epochs}")
+    logging.info(f"batch size: {args.batch_size}")
+    logging.info(f"learning rate: {args.learning_rate}")
+    logging.info(f"criterion: {args.criterion}")
     logging.info(f"dataset: {args.dataset}\n")
 
     # set datasets to use

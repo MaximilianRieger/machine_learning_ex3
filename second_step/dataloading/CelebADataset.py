@@ -1,4 +1,4 @@
-# pytorch dataloader class for loading the CelebA dataset
+# pytorch dataset class for loading the CelebA dataset
 import torch
 from torch.utils.data import Dataset
 from PIL import Image

@@ -3,13 +3,15 @@
 
 import logging
 import torch
-from tqdm import tqdm
 from torch.utils.data import DataLoader
 from second_step.dataloading.CelebADataset import CelebADataset
 from datasets.load_celebA_samples import load_celebA_samples
-from second_step.SimpleModel import SimpleModel
+from second_step.SimpleModel_CelebA import SimpleModel
 from torchvision import transforms
 from torchsummary import summary
+
+from second_step.Training import Training
+from second_step.Validation import Validation
 
 class TrainingRun:
     def __init__(self, args):
@@ -31,7 +33,10 @@ class TrainingRun:
         self.validation.model = model
         self.validation.criterion = criterion
         # make toTensor transform
-        transform = transforms.Compose([transforms.ToTensor()])
+        transform = transforms.Compose([
+            transforms.ToTensor(),  # Convert images to Tensor
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # Normalize images
+        ])
 
         # set dataloader and device
         train_img_names, train_labels, test_img_names, test_labels = load_celebA_samples()
@@ -72,7 +77,13 @@ class TrainingRun:
     @staticmethod
     def criterion(args):
         # create criterion from args
-        criterion = torch.nn.CrossEntropyLoss().to(args['device'])
+        if args['criterion'] == 'mse':
+            mse = torch.nn.MSELoss().to(args['device'])
+            criterion = lambda x, y: mse(x, TrainingRun.one_hot_encoding(y, 10))
+        elif args['criterion'] == 'cross_entropy':
+            criterion = torch.nn.CrossEntropyLoss().to(args['device'])
+        else:
+            raise ValueError('Criterion not recognized')
         return criterion
 
     @staticmethod
@@ -82,6 +93,10 @@ class TrainingRun:
         dataloader = DataLoader(dataset, batch_size=args['batch_size'], shuffle=True, num_workers=args['workers'])
         return dataloader
 
+    @staticmethod
+    def one_hot_encoding(labels, num_classes):
+        return torch.eye(num_classes, device=labels.device)[labels]
+
     def run(self):
         for epoch in range(self.epochs):
             self.training.run()
@@ -90,63 +105,3 @@ class TrainingRun:
         # save model
         self.trained_model = self.training.model
         logging.info(f'Validation set: Average loss: {self.validation.epoch_loss:.4f}, Accuracy: {self.validation.validation_accuracy:.0f}%\n')
-
-
-class Training:
-    def __init__(self, args):
-        self.args = args
-        self.model = None
-        self.optimizer = None
-        self.criterion = None
-        self.dataloader = None
-        self.device = None
-        self.epoch = 0
-        self.epoch_loss = 0
-
-    def run(self):
-        self.model.train()
-        self.epoch += 1
-        self.epoch_loss = 0
-        data_len = len(self.dataloader)
-        for batch_idx, (data, target) in tqdm(enumerate(self.dataloader), total=data_len, desc=f'Training epoch {self.epoch}'):
-            data, target = data.to(self.device), target.to(self.device)
-            self.optimizer.zero_grad()
-            output = self.model(data)
-            loss = self.criterion(output, target)
-            loss.backward()
-            self.optimizer.step()
-            if self.args['log_interval'] > 0 and batch_idx % self.args['log_interval'] == 0:
-                logging.info(f'Train Epoch: {self.epoch} [{batch_idx * self.args["batch_size"]}/{data_len} ({100. * batch_idx / data_len :.0f}%)]\tLoss: {loss.item():.6f}')
-            self.epoch_loss += loss.item()
-        self.epoch_loss /= data_len
-        logging.info(f'Train Epoch: {self.epoch}\tLoss: {self.epoch_loss:.6f}')
-
-class Validation:
-    def __init__(self, args):
-        self.validation_accuracy = None
-        self.args = args
-        self.model = None
-        self.criterion = None
-        self.dataloader = None
-        self.device = None
-        self.epoch = 0
-        self.epoch_loss = 0
-
-    def run(self):
-        self.model.eval()
-        self.epoch_loss = 0
-        data_len = len(self.dataloader)
-        imgs_done = 0
-        correct = 0
-        with torch.no_grad():
-            for data, target in tqdm(self.dataloader, total=len(self.dataloader), desc=f'Validation epoch {self.epoch}'):
-                data, target = data.to(self.device), target.to(self.device)
-                output = self.model(data)
-                self.epoch_loss += self.criterion(output, target).item()
-                pred = output.argmax(dim=1, keepdim=True)
-                correct += pred.eq(target.view_as(pred)).sum().item()
-                imgs_done += output.shape[0]
-
-        self.epoch_loss /= data_len
-        self.validation_accuracy = 100. * correct / imgs_done
-        logging.info(f'Validation set: Average loss: {self.epoch_loss:.4f}, Accuracy: {correct}/{imgs_done} ({self.validation_accuracy:.0f}%)\n')
