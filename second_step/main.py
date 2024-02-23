@@ -5,6 +5,7 @@ import torch
 import time
 
 from second_step.celebA_trainingrun import TrainingRun as CelebATrainingRun
+from second_step.cifar10_trainingrun import TrainingRun as CIFAR10TrainingRun
 
 datasets = ['cifar10', 'celebA']
 models = ['simple', 'resnet', 'resnet50']
@@ -58,28 +59,28 @@ def run_experiment(args=None):
     logging.info(f"criterion: {args.criterion}")
     logging.info(f"dataset: {args.dataset}\n")
 
-    # set datasets to use
-
-    args.dataset = [args.dataset]
     # set debugging defaults
     args.verbose = True
     # args.workers = 0
 
-    # go through datasets
-    for dataset in args.dataset:
-        # set dataset in args
-        args.dataset = dataset
-        # make dict from args
-        args_dict = vars(args)
-        training_run = CelebATrainingRun(args_dict)
-        # run training and time it
-        start = time.time()
-        training_run.run()
-        end = time.time()
-        logging.info(f'Training time: {end - start:.2f} seconds')
-        # save trained model
-        torch.save(training_run.trained_model, f'{args.dataset}_{args.model}.pt')
+    TrainingRun = None
+    if args.dataset == 'cifar10':
+        TrainingRun = CIFAR10TrainingRun
+    elif args.dataset == 'celebA':
+        TrainingRun = CelebATrainingRun
+    else:
+        raise ValueError('Dataset not recognized')
 
+    # make dict from args
+    args_dict = vars(args)
+    training_run = TrainingRun(args_dict)
+    # run training and time it
+    start = time.time()
+    training_run.run()
+    end = time.time()
+    logging.info(f'Training time: {end - start:.2f} seconds')
+    # save trained model
+    torch.save(training_run.trained_model, f'{args.dataset}_{args.model}.pt')
 
 
 if __name__ == '__main__':
