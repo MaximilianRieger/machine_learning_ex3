@@ -1,0 +1,200 @@
+/home/maxim/.virtualenvs/nanoGPT/bin/python /mnt/s/Data/Uni/machine_learning_ex3/second_step/main.py -m resnet -d celebA -e 20
+2024-02-23 21:53:17,152 INFO device: cuda
+2024-02-23 21:53:17,152 INFO model: resnet
+2024-02-23 21:53:17,152 INFO epochs: 20
+2024-02-23 21:53:17,152 INFO batch size: 256
+2024-02-23 21:53:17,152 INFO learning rate: 0.001
+2024-02-23 21:53:17,152 INFO criterion: mse
+2024-02-23 21:53:17,152 INFO dataset: celebA
+
+Downloading: "https://github.com/pytorch/vision/zipball/v0.6.0" to /home/maxim/.cache/torch/hub/v0.6.0.zip
+/home/maxim/.virtualenvs/nanoGPT/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/maxim/.virtualenvs/nanoGPT/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [256, 64, 109, 89]           9,408
+       BatchNorm2d-2         [256, 64, 109, 89]             128
+              ReLU-3         [256, 64, 109, 89]               0
+         MaxPool2d-4          [256, 64, 55, 45]               0
+            Conv2d-5          [256, 64, 55, 45]          36,864
+       BatchNorm2d-6          [256, 64, 55, 45]             128
+              ReLU-7          [256, 64, 55, 45]               0
+            Conv2d-8          [256, 64, 55, 45]          36,864
+       BatchNorm2d-9          [256, 64, 55, 45]             128
+             ReLU-10          [256, 64, 55, 45]               0
+       BasicBlock-11          [256, 64, 55, 45]               0
+           Conv2d-12          [256, 64, 55, 45]          36,864
+      BatchNorm2d-13          [256, 64, 55, 45]             128
+             ReLU-14          [256, 64, 55, 45]               0
+           Conv2d-15          [256, 64, 55, 45]          36,864
+      BatchNorm2d-16          [256, 64, 55, 45]             128
+             ReLU-17          [256, 64, 55, 45]               0
+       BasicBlock-18          [256, 64, 55, 45]               0
+           Conv2d-19         [256, 128, 28, 23]          73,728
+      BatchNorm2d-20         [256, 128, 28, 23]             256
+             ReLU-21         [256, 128, 28, 23]               0
+           Conv2d-22         [256, 128, 28, 23]         147,456
+      BatchNorm2d-23         [256, 128, 28, 23]             256
+           Conv2d-24         [256, 128, 28, 23]           8,192
+      BatchNorm2d-25         [256, 128, 28, 23]             256
+             ReLU-26         [256, 128, 28, 23]               0
+       BasicBlock-27         [256, 128, 28, 23]               0
+           Conv2d-28         [256, 128, 28, 23]         147,456
+      BatchNorm2d-29         [256, 128, 28, 23]             256
+             ReLU-30         [256, 128, 28, 23]               0
+           Conv2d-31         [256, 128, 28, 23]         147,456
+      BatchNorm2d-32         [256, 128, 28, 23]             256
+             ReLU-33         [256, 128, 28, 23]               0
+       BasicBlock-34         [256, 128, 28, 23]               0
+           Conv2d-35         [256, 256, 14, 12]         294,912
+      BatchNorm2d-36         [256, 256, 14, 12]             512
+             ReLU-37         [256, 256, 14, 12]               0
+           Conv2d-38         [256, 256, 14, 12]         589,824
+      BatchNorm2d-39         [256, 256, 14, 12]             512
+           Conv2d-40         [256, 256, 14, 12]          32,768
+      BatchNorm2d-41         [256, 256, 14, 12]             512
+             ReLU-42         [256, 256, 14, 12]               0
+       BasicBlock-43         [256, 256, 14, 12]               0
+           Conv2d-44         [256, 256, 14, 12]         589,824
+      BatchNorm2d-45         [256, 256, 14, 12]             512
+             ReLU-46         [256, 256, 14, 12]               0
+           Conv2d-47         [256, 256, 14, 12]         589,824
+      BatchNorm2d-48         [256, 256, 14, 12]             512
+             ReLU-49         [256, 256, 14, 12]               0
+       BasicBlock-50         [256, 256, 14, 12]               0
+           Conv2d-51           [256, 512, 7, 6]       1,179,648
+      BatchNorm2d-52           [256, 512, 7, 6]           1,024
+             ReLU-53           [256, 512, 7, 6]               0
+           Conv2d-54           [256, 512, 7, 6]       2,359,296
+      BatchNorm2d-55           [256, 512, 7, 6]           1,024
+           Conv2d-56           [256, 512, 7, 6]         131,072
+      BatchNorm2d-57           [256, 512, 7, 6]           1,024
+             ReLU-58           [256, 512, 7, 6]               0
+       BasicBlock-59           [256, 512, 7, 6]               0
+           Conv2d-60           [256, 512, 7, 6]       2,359,296
+      BatchNorm2d-61           [256, 512, 7, 6]           1,024
+             ReLU-62           [256, 512, 7, 6]               0
+           Conv2d-63           [256, 512, 7, 6]       2,359,296
+      BatchNorm2d-64           [256, 512, 7, 6]           1,024
+             ReLU-65           [256, 512, 7, 6]               0
+       BasicBlock-66           [256, 512, 7, 6]               0
+AdaptiveAvgPool2d-67           [256, 512, 1, 1]               0
+           Linear-68                  [256, 10]           5,130
+================================================================
+Total params: 11,181,642
+Trainable params: 11,181,642
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 113.68
+Forward/backward pass size (MB): 12871.52
+Params size (MB): 42.65
+Estimated Total Size (MB): 13027.86
+----------------------------------------------------------------
+Training epoch 1: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 21:55:25,845 INFO Train Epoch: 1	Loss: 0.105044
+Validation epoch 0: 100%|██████████| 40/40 [00:22<00:00,  1.81it/s]
+2024-02-23 21:55:47,931 INFO Validation set: Average loss: 0.0789, Accuracy: 3747/10000 (37%)
+
+Training epoch 2: 100%|██████████| 196/196 [02:05<00:00,  1.57it/s]
+2024-02-23 21:57:53,254 INFO Train Epoch: 2	Loss: 0.072147
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.93it/s]
+2024-02-23 21:58:14,011 INFO Validation set: Average loss: 0.0735, Accuracy: 4346/10000 (43%)
+
+Training epoch 3: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 22:00:17,292 INFO Train Epoch: 3	Loss: 0.067699
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.98it/s]
+2024-02-23 22:00:37,541 INFO Validation set: Average loss: 0.0698, Accuracy: 4841/10000 (48%)
+
+Training epoch 4: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:02:40,501 INFO Train Epoch: 4	Loss: 0.064942
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.99it/s]
+2024-02-23 22:03:00,629 INFO Validation set: Average loss: 0.0659, Accuracy: 5058/10000 (51%)
+
+Training epoch 5: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:05:03,178 INFO Train Epoch: 5	Loss: 0.063143
+Validation epoch 0: 100%|██████████| 40/40 [00:21<00:00,  1.90it/s]
+2024-02-23 22:05:24,263 INFO Validation set: Average loss: 0.0647, Accuracy: 5019/10000 (50%)
+
+Training epoch 6: 100%|██████████| 196/196 [02:03<00:00,  1.58it/s]
+2024-02-23 22:07:28,310 INFO Train Epoch: 6	Loss: 0.062254
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.96it/s]
+2024-02-23 22:07:48,695 INFO Validation set: Average loss: 0.0622, Accuracy: 5346/10000 (53%)
+
+Training epoch 7: 100%|██████████| 196/196 [02:02<00:00,  1.59it/s]
+2024-02-23 22:09:51,691 INFO Train Epoch: 7	Loss: 0.060698
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.97it/s]
+2024-02-23 22:10:11,974 INFO Validation set: Average loss: 0.0611, Accuracy: 5405/10000 (54%)
+
+Training epoch 8: 100%|██████████| 196/196 [02:03<00:00,  1.58it/s]
+2024-02-23 22:12:15,908 INFO Train Epoch: 8	Loss: 0.059451
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.93it/s]
+2024-02-23 22:12:36,636 INFO Validation set: Average loss: 0.0617, Accuracy: 5437/10000 (54%)
+
+Training epoch 9: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:14:39,399 INFO Train Epoch: 9	Loss: 0.058724
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.99it/s]
+2024-02-23 22:14:59,509 INFO Validation set: Average loss: 0.0601, Accuracy: 5607/10000 (56%)
+
+Training epoch 10: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:17:02,328 INFO Train Epoch: 10	Loss: 0.057388
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.99it/s]
+2024-02-23 22:17:22,399 INFO Validation set: Average loss: 0.0588, Accuracy: 5594/10000 (56%)
+
+Training epoch 11: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 22:19:25,906 INFO Train Epoch: 11	Loss: 0.056026
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.91it/s]
+2024-02-23 22:19:46,890 INFO Validation set: Average loss: 0.0559, Accuracy: 6091/10000 (61%)
+
+Training epoch 12: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:21:49,369 INFO Train Epoch: 12	Loss: 0.053990
+Validation epoch 0: 100%|██████████| 40/40 [00:21<00:00,  1.90it/s]
+2024-02-23 22:22:10,436 INFO Validation set: Average loss: 0.0531, Accuracy: 6132/10000 (61%)
+
+Training epoch 13: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:24:13,309 INFO Train Epoch: 13	Loss: 0.051658
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.95it/s]
+2024-02-23 22:24:33,849 INFO Validation set: Average loss: 0.0488, Accuracy: 6627/10000 (66%)
+
+Training epoch 14: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:26:36,292 INFO Train Epoch: 14	Loss: 0.049209
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.93it/s]
+2024-02-23 22:26:56,969 INFO Validation set: Average loss: 0.0487, Accuracy: 6709/10000 (67%)
+
+Training epoch 15: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 22:29:00,661 INFO Train Epoch: 15	Loss: 0.046377
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.95it/s]
+2024-02-23 22:29:21,222 INFO Validation set: Average loss: 0.0492, Accuracy: 6653/10000 (67%)
+
+Training epoch 16: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 22:31:24,474 INFO Train Epoch: 16	Loss: 0.043308
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.98it/s]
+2024-02-23 22:31:44,637 INFO Validation set: Average loss: 0.0384, Accuracy: 7516/10000 (75%)
+
+Training epoch 17: 100%|██████████| 196/196 [02:02<00:00,  1.60it/s]
+2024-02-23 22:33:47,489 INFO Train Epoch: 17	Loss: 0.040137
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.96it/s]
+2024-02-23 22:34:07,913 INFO Validation set: Average loss: 0.0379, Accuracy: 7586/10000 (76%)
+
+Training epoch 18: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 22:36:11,249 INFO Train Epoch: 18	Loss: 0.036703
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.98it/s]
+2024-02-23 22:36:31,462 INFO Validation set: Average loss: 0.0319, Accuracy: 8081/10000 (81%)
+
+Training epoch 19: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 22:38:34,807 INFO Train Epoch: 19	Loss: 0.034038
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.99it/s]
+2024-02-23 22:38:54,861 INFO Validation set: Average loss: 0.0269, Accuracy: 8368/10000 (84%)
+
+Training epoch 20: 100%|██████████| 196/196 [02:03<00:00,  1.59it/s]
+2024-02-23 22:40:58,430 INFO Train Epoch: 20	Loss: 0.030826
+Validation epoch 0: 100%|██████████| 40/40 [00:20<00:00,  1.97it/s]
+2024-02-23 22:41:18,722 INFO Validation set: Average loss: 0.0279, Accuracy: 8333/10000 (83%)
+
+2024-02-23 22:41:18,723 INFO Validation set: Average loss: 0.0279, Accuracy: 83%
+
+2024-02-23 22:41:18,724 INFO Training time: 2876.02 seconds
+
+Process finished with exit code 0

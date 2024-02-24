@@ -37,6 +37,12 @@ class TrainingRun:
             transforms.ToTensor(),  # Convert images to Tensor
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # Normalize images
         ])
+        if args['model'] == 'resnet' or args['model'] == 'resnet50':
+            transform = transforms.Compose([
+                transforms.Resize((224, 224)),
+                transforms.ToTensor(),
+                transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+            ])
 
         # set dataloader and device
         train_img_names, train_labels, test_img_names, test_labels = load_celebA_samples()
