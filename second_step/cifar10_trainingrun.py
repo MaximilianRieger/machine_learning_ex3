@@ -34,12 +34,14 @@ class TrainingRun:
         self.validation.criterion = criterion
         # make toTensor transform
         transform = transforms.Compose([
-            # transforms.ToTensor(), # Convert images to Tensor
-            # reshape tensor from row format (0:1024, 1024:2048, 2048:3072) to (32, 32, 3)
             transforms.Lambda(lambda x: TrainingRun.reshape_tensor(x)),
             transforms.Normalize((0.4914, 0.4822, 0.4465), (0.247, 0.243, 0.261)) # Normalize images
         ])
-
+        if args['model'] == 'resnet':
+            transform = transforms.Compose([
+                transforms.Lambda(lambda x: TrainingRun.reshape_resnet_tensor(x)),
+                transforms.Normalize((0.4914, 0.4822, 0.4465), (0.247, 0.243, 0.261))  # Normalize images
+            ])
         # set dataloader and device
         train_img_names, train_labels, test_img_names, test_labels = load_cifar10_samples()
         self.training.dataloader = self.dataloader(train_img_names, train_labels, args, transform=transform)
@@ -56,6 +58,15 @@ class TrainingRun:
         # returns: tensor of shape (3, 32, 32)
         x = torch.tensor(x, dtype=torch.float32)
         return x.view(3, 32, 32)
+    @staticmethod
+    def reshape_resnet_tensor(x):
+        # reshapes the custom cifar10 tensor to normal image tensor
+        # x: tensor of shape (3072,)
+        # returns: tensor of shape (3, 32, 32)
+        x = torch.tensor(x, dtype=torch.float32)
+        x = x.view(3, 32, 32)
+        x = torch.nn.functional.interpolate(x.unsqueeze(0), size=(224, 224)).squeeze(0)
+        return x
 
     @staticmethod
     def model(args):
@@ -68,10 +79,6 @@ class TrainingRun:
             # resnet model
             model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=False)
             model.fc = torch.nn.Linear(512, 10)
-        elif args['model'] == 'resnet50':
-            # resnet model
-            model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=False)
-            model.fc = torch.nn.Linear(2048, 10)
         else:
             raise ValueError('Model not recognized')
         # move model to device

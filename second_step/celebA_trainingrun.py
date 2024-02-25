@@ -37,7 +37,7 @@ class TrainingRun:
             transforms.ToTensor(),  # Convert images to Tensor
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # Normalize images
         ])
-        if args['model'] == 'resnet' or args['model'] == 'resnet50':
+        if args['model'] == 'resnet':
             transform = transforms.Compose([
                 transforms.Resize((224, 224)),
                 transforms.ToTensor(),
@@ -64,10 +64,6 @@ class TrainingRun:
             # resnet model
             model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=False)
             model.fc = torch.nn.Linear(512, 10)
-        elif args['model'] == 'resnet50':
-            # resnet model
-            model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=False)
-            model.fc = torch.nn.Linear(2048, 10)
         else:
             raise ValueError('Model not recognized')
         # move model to device
