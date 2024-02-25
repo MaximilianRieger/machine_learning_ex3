@@ -1,0 +1,534 @@
+/home/maxim/.virtualenvs/nanoGPT/bin/python /mnt/s/Data/Uni/machine_learning_ex3/second_step/main.py -m simple -d celebA -e 100
+2024-02-24 08:42:07,549 INFO device: cuda
+2024-02-24 08:42:07,550 INFO model: simple
+2024-02-24 08:42:07,550 INFO epochs: 100
+2024-02-24 08:42:07,550 INFO batch size: 256
+2024-02-24 08:42:07,550 INFO learning rate: 0.001
+2024-02-24 08:42:07,550 INFO criterion: mse
+2024-02-24 08:42:07,550 INFO dataset: celebA
+
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1        [256, 32, 218, 178]             896
+            Conv2d-2         [256, 64, 109, 89]          18,496
+            Conv2d-3         [256, 128, 54, 44]          73,856
+            Conv2d-4         [256, 256, 27, 22]         295,168
+            Linear-5                 [256, 512]       3,932,672
+            Linear-6                  [256, 40]          20,520
+            Linear-7                  [256, 10]             410
+================================================================
+Total params: 4,342,018
+Trainable params: 4,342,018
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 113.68
+Forward/backward pass size (MB): 4529.97
+Params size (MB): 16.56
+Estimated Total Size (MB): 4660.22
+----------------------------------------------------------------
+Training epoch 1: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 08:43:34,930 INFO Train Epoch: 1	Loss: 0.077268
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.52it/s]
+2024-02-24 08:43:50,831 INFO Validation set: Average loss: 0.0714, Accuracy: 4373/10000 (44%)
+
+Training epoch 2: 100%|██████████| 196/196 [01:21<00:00,  2.39it/s]
+2024-02-24 08:45:12,878 INFO Train Epoch: 2	Loss: 0.068397
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.50it/s]
+2024-02-24 08:45:28,862 INFO Validation set: Average loss: 0.0680, Accuracy: 4655/10000 (47%)
+
+Training epoch 3: 100%|██████████| 196/196 [01:22<00:00,  2.38it/s]
+2024-02-24 08:46:51,398 INFO Train Epoch: 3	Loss: 0.065619
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.69it/s]
+2024-02-24 08:47:06,256 INFO Validation set: Average loss: 0.0642, Accuracy: 5060/10000 (51%)
+
+Training epoch 4: 100%|██████████| 196/196 [01:22<00:00,  2.37it/s]
+2024-02-24 08:48:29,138 INFO Train Epoch: 4	Loss: 0.063225
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.57it/s]
+2024-02-24 08:48:44,713 INFO Validation set: Average loss: 0.0618, Accuracy: 5241/10000 (52%)
+
+Training epoch 5: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 08:50:08,108 INFO Train Epoch: 5	Loss: 0.061708
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 08:50:23,750 INFO Validation set: Average loss: 0.0601, Accuracy: 5440/10000 (54%)
+
+Training epoch 6: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 08:51:47,072 INFO Train Epoch: 6	Loss: 0.059860
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.73it/s]
+2024-02-24 08:52:01,723 INFO Validation set: Average loss: 0.0573, Accuracy: 5703/10000 (57%)
+
+Training epoch 7: 100%|██████████| 196/196 [01:22<00:00,  2.36it/s]
+2024-02-24 08:53:24,694 INFO Train Epoch: 7	Loss: 0.058225
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.55it/s]
+2024-02-24 08:53:40,375 INFO Validation set: Average loss: 0.0561, Accuracy: 5767/10000 (58%)
+
+Training epoch 8: 100%|██████████| 196/196 [01:22<00:00,  2.36it/s]
+2024-02-24 08:55:03,447 INFO Train Epoch: 8	Loss: 0.056725
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.59it/s]
+2024-02-24 08:55:18,892 INFO Validation set: Average loss: 0.0546, Accuracy: 5989/10000 (60%)
+
+Training epoch 9: 100%|██████████| 196/196 [01:23<00:00,  2.36it/s]
+2024-02-24 08:56:42,200 INFO Train Epoch: 9	Loss: 0.054870
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.58it/s]
+2024-02-24 08:56:57,702 INFO Validation set: Average loss: 0.0524, Accuracy: 6139/10000 (61%)
+
+Training epoch 10: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 08:58:21,095 INFO Train Epoch: 10	Loss: 0.052884
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.60it/s]
+2024-02-24 08:58:36,460 INFO Validation set: Average loss: 0.0489, Accuracy: 6524/10000 (65%)
+
+Training epoch 11: 100%|██████████| 196/196 [01:22<00:00,  2.38it/s]
+2024-02-24 08:59:59,031 INFO Train Epoch: 11	Loss: 0.050276
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:00:14,107 INFO Validation set: Average loss: 0.0472, Accuracy: 6565/10000 (66%)
+
+Training epoch 12: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 09:01:38,414 INFO Train Epoch: 12	Loss: 0.048360
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 09:01:54,038 INFO Validation set: Average loss: 0.0440, Accuracy: 6843/10000 (68%)
+
+Training epoch 13: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:03:17,689 INFO Train Epoch: 13	Loss: 0.045369
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.67it/s]
+2024-02-24 09:03:32,682 INFO Validation set: Average loss: 0.0411, Accuracy: 7142/10000 (71%)
+
+Training epoch 14: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:04:56,698 INFO Train Epoch: 14	Loss: 0.042857
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.60it/s]
+2024-02-24 09:05:12,095 INFO Validation set: Average loss: 0.0385, Accuracy: 7302/10000 (73%)
+
+Training epoch 15: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 09:06:36,203 INFO Train Epoch: 15	Loss: 0.040388
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.52it/s]
+2024-02-24 09:06:52,073 INFO Validation set: Average loss: 0.0364, Accuracy: 7500/10000 (75%)
+
+Training epoch 16: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:08:16,013 INFO Train Epoch: 16	Loss: 0.038097
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.68it/s]
+2024-02-24 09:08:30,952 INFO Validation set: Average loss: 0.0338, Accuracy: 7694/10000 (77%)
+
+Training epoch 17: 100%|██████████| 196/196 [01:23<00:00,  2.33it/s]
+2024-02-24 09:09:55,013 INFO Train Epoch: 17	Loss: 0.036260
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:10:10,103 INFO Validation set: Average loss: 0.0324, Accuracy: 7793/10000 (78%)
+
+Training epoch 18: 100%|██████████| 196/196 [01:21<00:00,  2.39it/s]
+2024-02-24 09:11:32,032 INFO Train Epoch: 18	Loss: 0.034030
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.71it/s]
+2024-02-24 09:11:46,780 INFO Validation set: Average loss: 0.0300, Accuracy: 8014/10000 (80%)
+
+Training epoch 19: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:13:10,281 INFO Train Epoch: 19	Loss: 0.032635
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.50it/s]
+2024-02-24 09:13:26,280 INFO Validation set: Average loss: 0.0292, Accuracy: 8025/10000 (80%)
+
+Training epoch 20: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:14:49,825 INFO Train Epoch: 20	Loss: 0.031420
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 09:15:05,471 INFO Validation set: Average loss: 0.0287, Accuracy: 8103/10000 (81%)
+
+Training epoch 21: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:16:29,124 INFO Train Epoch: 21	Loss: 0.029903
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.68it/s]
+2024-02-24 09:16:44,069 INFO Validation set: Average loss: 0.0261, Accuracy: 8288/10000 (83%)
+
+Training epoch 22: 100%|██████████| 196/196 [01:22<00:00,  2.38it/s]
+2024-02-24 09:18:06,531 INFO Train Epoch: 22	Loss: 0.028945
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 09:18:22,142 INFO Validation set: Average loss: 0.0259, Accuracy: 8370/10000 (84%)
+
+Training epoch 23: 100%|██████████| 196/196 [01:22<00:00,  2.36it/s]
+2024-02-24 09:19:45,213 INFO Train Epoch: 23	Loss: 0.027814
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.69it/s]
+2024-02-24 09:20:00,079 INFO Validation set: Average loss: 0.0250, Accuracy: 8378/10000 (84%)
+
+Training epoch 24: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:21:23,843 INFO Train Epoch: 24	Loss: 0.027036
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:21:38,951 INFO Validation set: Average loss: 0.0250, Accuracy: 8423/10000 (84%)
+
+Training epoch 25: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:23:02,762 INFO Train Epoch: 25	Loss: 0.026406
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 09:23:18,417 INFO Validation set: Average loss: 0.0227, Accuracy: 8521/10000 (85%)
+
+Training epoch 26: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:24:41,980 INFO Train Epoch: 26	Loss: 0.025497
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.70it/s]
+2024-02-24 09:24:56,801 INFO Validation set: Average loss: 0.0226, Accuracy: 8542/10000 (85%)
+
+Training epoch 27: 100%|██████████| 196/196 [01:24<00:00,  2.31it/s]
+2024-02-24 09:26:21,548 INFO Train Epoch: 27	Loss: 0.025071
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:26:36,661 INFO Validation set: Average loss: 0.0246, Accuracy: 8431/10000 (84%)
+
+Training epoch 28: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:28:00,257 INFO Train Epoch: 28	Loss: 0.024812
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:28:15,350 INFO Validation set: Average loss: 0.0222, Accuracy: 8563/10000 (86%)
+
+Training epoch 29: 100%|██████████| 196/196 [01:22<00:00,  2.36it/s]
+2024-02-24 09:29:38,425 INFO Train Epoch: 29	Loss: 0.024433
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.64it/s]
+2024-02-24 09:29:53,597 INFO Validation set: Average loss: 0.0215, Accuracy: 8662/10000 (87%)
+
+Training epoch 30: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:31:17,087 INFO Train Epoch: 30	Loss: 0.023877
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.66it/s]
+2024-02-24 09:31:32,123 INFO Validation set: Average loss: 0.0212, Accuracy: 8612/10000 (86%)
+
+Training epoch 31: 100%|██████████| 196/196 [01:23<00:00,  2.36it/s]
+2024-02-24 09:32:55,360 INFO Train Epoch: 31	Loss: 0.023539
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.68it/s]
+2024-02-24 09:33:10,290 INFO Validation set: Average loss: 0.0213, Accuracy: 8635/10000 (86%)
+
+Training epoch 32: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:34:33,945 INFO Train Epoch: 32	Loss: 0.023368
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.68it/s]
+2024-02-24 09:34:48,867 INFO Validation set: Average loss: 0.0202, Accuracy: 8635/10000 (86%)
+
+Training epoch 33: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 09:36:13,405 INFO Train Epoch: 33	Loss: 0.022807
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.60it/s]
+2024-02-24 09:36:28,801 INFO Validation set: Average loss: 0.0208, Accuracy: 8666/10000 (87%)
+
+Training epoch 34: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:37:52,825 INFO Train Epoch: 34	Loss: 0.022818
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.50it/s]
+2024-02-24 09:38:08,815 INFO Validation set: Average loss: 0.0209, Accuracy: 8620/10000 (86%)
+
+Training epoch 35: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:39:32,499 INFO Train Epoch: 35	Loss: 0.022608
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.61it/s]
+2024-02-24 09:39:47,834 INFO Validation set: Average loss: 0.0199, Accuracy: 8694/10000 (87%)
+
+Training epoch 36: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 09:41:12,269 INFO Train Epoch: 36	Loss: 0.022322
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:41:27,349 INFO Validation set: Average loss: 0.0203, Accuracy: 8649/10000 (86%)
+
+Training epoch 37: 100%|██████████| 196/196 [01:24<00:00,  2.31it/s]
+2024-02-24 09:42:52,365 INFO Train Epoch: 37	Loss: 0.022172
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.61it/s]
+2024-02-24 09:43:07,712 INFO Validation set: Average loss: 0.0196, Accuracy: 8684/10000 (87%)
+
+Training epoch 38: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 09:44:31,958 INFO Train Epoch: 38	Loss: 0.021931
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.64it/s]
+2024-02-24 09:44:47,101 INFO Validation set: Average loss: 0.0199, Accuracy: 8713/10000 (87%)
+
+Training epoch 39: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 09:46:11,691 INFO Train Epoch: 39	Loss: 0.021618
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.60it/s]
+2024-02-24 09:46:27,069 INFO Validation set: Average loss: 0.0198, Accuracy: 8685/10000 (87%)
+
+Training epoch 40: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 09:47:51,238 INFO Train Epoch: 40	Loss: 0.021588
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:48:06,326 INFO Validation set: Average loss: 0.0190, Accuracy: 8722/10000 (87%)
+
+Training epoch 41: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 09:49:30,756 INFO Train Epoch: 41	Loss: 0.021145
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.69it/s]
+2024-02-24 09:49:45,621 INFO Validation set: Average loss: 0.0190, Accuracy: 8744/10000 (87%)
+
+Training epoch 42: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:51:09,196 INFO Train Epoch: 42	Loss: 0.021039
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.66it/s]
+2024-02-24 09:51:24,210 INFO Validation set: Average loss: 0.0189, Accuracy: 8725/10000 (87%)
+
+Training epoch 43: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:52:48,011 INFO Train Epoch: 43	Loss: 0.020966
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.53it/s]
+2024-02-24 09:53:03,797 INFO Validation set: Average loss: 0.0184, Accuracy: 8738/10000 (87%)
+
+Training epoch 44: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:54:27,500 INFO Train Epoch: 44	Loss: 0.020984
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.67it/s]
+2024-02-24 09:54:42,455 INFO Validation set: Average loss: 0.0182, Accuracy: 8764/10000 (88%)
+
+Training epoch 45: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:56:06,112 INFO Train Epoch: 45	Loss: 0.020681
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.59it/s]
+2024-02-24 09:56:21,578 INFO Validation set: Average loss: 0.0185, Accuracy: 8754/10000 (88%)
+
+Training epoch 46: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 09:57:45,217 INFO Train Epoch: 46	Loss: 0.020522
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 09:58:00,332 INFO Validation set: Average loss: 0.0188, Accuracy: 8765/10000 (88%)
+
+Training epoch 47: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 09:59:24,162 INFO Train Epoch: 47	Loss: 0.020511
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.59it/s]
+2024-02-24 09:59:39,622 INFO Validation set: Average loss: 0.0178, Accuracy: 8792/10000 (88%)
+
+Training epoch 48: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 10:01:03,910 INFO Train Epoch: 48	Loss: 0.020350
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.62it/s]
+2024-02-24 10:01:19,164 INFO Validation set: Average loss: 0.0181, Accuracy: 8767/10000 (88%)
+
+Training epoch 49: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:02:43,029 INFO Train Epoch: 49	Loss: 0.020215
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 10:02:58,685 INFO Validation set: Average loss: 0.0189, Accuracy: 8759/10000 (88%)
+
+Training epoch 50: 100%|██████████| 196/196 [01:23<00:00,  2.36it/s]
+2024-02-24 10:04:21,832 INFO Train Epoch: 50	Loss: 0.020180
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.70it/s]
+2024-02-24 10:04:36,671 INFO Validation set: Average loss: 0.0177, Accuracy: 8805/10000 (88%)
+
+Training epoch 51: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:06:00,488 INFO Train Epoch: 51	Loss: 0.019971
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.72it/s]
+2024-02-24 10:06:15,172 INFO Validation set: Average loss: 0.0181, Accuracy: 8826/10000 (88%)
+
+Training epoch 52: 100%|██████████| 196/196 [01:22<00:00,  2.36it/s]
+2024-02-24 10:07:38,156 INFO Train Epoch: 52	Loss: 0.019803
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.63it/s]
+2024-02-24 10:07:53,350 INFO Validation set: Average loss: 0.0179, Accuracy: 8787/10000 (88%)
+
+Training epoch 53: 100%|██████████| 196/196 [01:24<00:00,  2.31it/s]
+2024-02-24 10:09:18,297 INFO Train Epoch: 53	Loss: 0.019745
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 10:09:33,915 INFO Validation set: Average loss: 0.0176, Accuracy: 8805/10000 (88%)
+
+Training epoch 54: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 10:10:57,393 INFO Train Epoch: 54	Loss: 0.019773
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.67it/s]
+2024-02-24 10:11:12,384 INFO Validation set: Average loss: 0.0182, Accuracy: 8786/10000 (88%)
+
+Training epoch 55: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:12:36,373 INFO Train Epoch: 55	Loss: 0.019662
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 10:12:52,014 INFO Validation set: Average loss: 0.0173, Accuracy: 8791/10000 (88%)
+
+Training epoch 56: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:14:15,897 INFO Train Epoch: 56	Loss: 0.019392
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.64it/s]
+2024-02-24 10:14:31,044 INFO Validation set: Average loss: 0.0174, Accuracy: 8792/10000 (88%)
+
+Training epoch 57: 100%|██████████| 196/196 [01:22<00:00,  2.36it/s]
+2024-02-24 10:15:54,108 INFO Train Epoch: 57	Loss: 0.019423
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.64it/s]
+2024-02-24 10:16:09,263 INFO Validation set: Average loss: 0.0168, Accuracy: 8807/10000 (88%)
+
+Training epoch 58: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 10:17:32,622 INFO Train Epoch: 58	Loss: 0.019266
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.63it/s]
+2024-02-24 10:17:47,844 INFO Validation set: Average loss: 0.0172, Accuracy: 8784/10000 (88%)
+
+Training epoch 59: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 10:19:12,388 INFO Train Epoch: 59	Loss: 0.019216
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.54it/s]
+2024-02-24 10:19:28,165 INFO Validation set: Average loss: 0.0166, Accuracy: 8836/10000 (88%)
+
+Training epoch 60: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 10:20:52,332 INFO Train Epoch: 60	Loss: 0.019227
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.55it/s]
+2024-02-24 10:21:08,028 INFO Validation set: Average loss: 0.0169, Accuracy: 8834/10000 (88%)
+
+Training epoch 61: 100%|██████████| 196/196 [01:24<00:00,  2.31it/s]
+2024-02-24 10:22:32,809 INFO Train Epoch: 61	Loss: 0.019081
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.55it/s]
+2024-02-24 10:22:48,511 INFO Validation set: Average loss: 0.0166, Accuracy: 8825/10000 (88%)
+
+Training epoch 62: 100%|██████████| 196/196 [01:26<00:00,  2.26it/s]
+2024-02-24 10:24:15,168 INFO Train Epoch: 62	Loss: 0.019041
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.60it/s]
+2024-02-24 10:24:30,555 INFO Validation set: Average loss: 0.0166, Accuracy: 8849/10000 (88%)
+
+Training epoch 63: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 10:25:55,217 INFO Train Epoch: 63	Loss: 0.018793
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.54it/s]
+2024-02-24 10:26:10,965 INFO Validation set: Average loss: 0.0171, Accuracy: 8828/10000 (88%)
+
+Training epoch 64: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 10:27:34,548 INFO Train Epoch: 64	Loss: 0.018626
+Validation epoch 0: 100%|██████████| 40/40 [00:16<00:00,  2.47it/s]
+2024-02-24 10:27:50,715 INFO Validation set: Average loss: 0.0162, Accuracy: 8840/10000 (88%)
+
+Training epoch 65: 100%|██████████| 196/196 [01:25<00:00,  2.30it/s]
+2024-02-24 10:29:16,057 INFO Train Epoch: 65	Loss: 0.018659
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.57it/s]
+2024-02-24 10:29:31,644 INFO Validation set: Average loss: 0.0170, Accuracy: 8845/10000 (88%)
+
+Training epoch 66: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 10:30:55,954 INFO Train Epoch: 66	Loss: 0.018689
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.57it/s]
+2024-02-24 10:31:11,537 INFO Validation set: Average loss: 0.0160, Accuracy: 8845/10000 (88%)
+
+Training epoch 67: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:32:35,541 INFO Train Epoch: 67	Loss: 0.018583
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.64it/s]
+2024-02-24 10:32:50,668 INFO Validation set: Average loss: 0.0163, Accuracy: 8843/10000 (88%)
+
+Training epoch 68: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:34:14,457 INFO Train Epoch: 68	Loss: 0.018614
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.54it/s]
+2024-02-24 10:34:30,178 INFO Validation set: Average loss: 0.0161, Accuracy: 8872/10000 (89%)
+
+Training epoch 69: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:35:54,002 INFO Train Epoch: 69	Loss: 0.018198
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.59it/s]
+2024-02-24 10:36:09,431 INFO Validation set: Average loss: 0.0164, Accuracy: 8849/10000 (88%)
+
+Training epoch 70: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 10:37:34,032 INFO Train Epoch: 70	Loss: 0.018226
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.67it/s]
+2024-02-24 10:37:48,989 INFO Validation set: Average loss: 0.0163, Accuracy: 8854/10000 (89%)
+
+Training epoch 71: 100%|██████████| 196/196 [01:24<00:00,  2.31it/s]
+2024-02-24 10:39:13,778 INFO Train Epoch: 71	Loss: 0.018116
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 10:39:28,849 INFO Validation set: Average loss: 0.0161, Accuracy: 8860/10000 (89%)
+
+Training epoch 72: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 10:40:52,311 INFO Train Epoch: 72	Loss: 0.018020
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 10:41:07,961 INFO Validation set: Average loss: 0.0160, Accuracy: 8857/10000 (89%)
+
+Training epoch 73: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 10:42:31,479 INFO Train Epoch: 73	Loss: 0.017893
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.59it/s]
+2024-02-24 10:42:46,916 INFO Validation set: Average loss: 0.0159, Accuracy: 8862/10000 (89%)
+
+Training epoch 74: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 10:44:11,388 INFO Train Epoch: 74	Loss: 0.017952
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.64it/s]
+2024-02-24 10:44:26,519 INFO Validation set: Average loss: 0.0160, Accuracy: 8818/10000 (88%)
+
+Training epoch 75: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:45:50,508 INFO Train Epoch: 75	Loss: 0.017883
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.55it/s]
+2024-02-24 10:46:06,225 INFO Validation set: Average loss: 0.0166, Accuracy: 8826/10000 (88%)
+
+Training epoch 76: 100%|██████████| 196/196 [01:23<00:00,  2.36it/s]
+2024-02-24 10:47:29,491 INFO Train Epoch: 76	Loss: 0.017798
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.63it/s]
+2024-02-24 10:47:44,701 INFO Validation set: Average loss: 0.0162, Accuracy: 8817/10000 (88%)
+
+Training epoch 77: 100%|██████████| 196/196 [01:23<00:00,  2.36it/s]
+2024-02-24 10:49:07,971 INFO Train Epoch: 77	Loss: 0.017756
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.57it/s]
+2024-02-24 10:49:23,515 INFO Validation set: Average loss: 0.0154, Accuracy: 8884/10000 (89%)
+
+Training epoch 78: 100%|██████████| 196/196 [01:22<00:00,  2.37it/s]
+2024-02-24 10:50:46,189 INFO Train Epoch: 78	Loss: 0.017572
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.53it/s]
+2024-02-24 10:51:02,031 INFO Validation set: Average loss: 0.0159, Accuracy: 8850/10000 (88%)
+
+Training epoch 79: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 10:52:25,864 INFO Train Epoch: 79	Loss: 0.017533
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.66it/s]
+2024-02-24 10:52:40,930 INFO Validation set: Average loss: 0.0156, Accuracy: 8874/10000 (89%)
+
+Training epoch 80: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 10:54:04,258 INFO Train Epoch: 80	Loss: 0.017457
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.62it/s]
+2024-02-24 10:54:19,535 INFO Validation set: Average loss: 0.0157, Accuracy: 8849/10000 (88%)
+
+Training epoch 81: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 10:55:43,938 INFO Train Epoch: 81	Loss: 0.017407
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.69it/s]
+2024-02-24 10:55:58,827 INFO Validation set: Average loss: 0.0149, Accuracy: 8905/10000 (89%)
+
+Training epoch 82: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 10:57:22,975 INFO Train Epoch: 82	Loss: 0.017495
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.63it/s]
+2024-02-24 10:57:38,198 INFO Validation set: Average loss: 0.0157, Accuracy: 8847/10000 (88%)
+
+Training epoch 83: 100%|██████████| 196/196 [01:25<00:00,  2.30it/s]
+2024-02-24 10:59:03,553 INFO Train Epoch: 83	Loss: 0.017479
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.55it/s]
+2024-02-24 10:59:19,246 INFO Validation set: Average loss: 0.0156, Accuracy: 8860/10000 (89%)
+
+Training epoch 84: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 11:00:42,870 INFO Train Epoch: 84	Loss: 0.017356
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.59it/s]
+2024-02-24 11:00:58,311 INFO Validation set: Average loss: 0.0152, Accuracy: 8898/10000 (89%)
+
+Training epoch 85: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 11:02:22,085 INFO Train Epoch: 85	Loss: 0.017238
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.70it/s]
+2024-02-24 11:02:36,905 INFO Validation set: Average loss: 0.0154, Accuracy: 8881/10000 (89%)
+
+Training epoch 86: 100%|██████████| 196/196 [01:23<00:00,  2.36it/s]
+2024-02-24 11:04:00,026 INFO Train Epoch: 86	Loss: 0.017197
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.69it/s]
+2024-02-24 11:04:14,916 INFO Validation set: Average loss: 0.0162, Accuracy: 8856/10000 (89%)
+
+Training epoch 87: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 11:05:38,613 INFO Train Epoch: 87	Loss: 0.017140
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.65it/s]
+2024-02-24 11:05:53,687 INFO Validation set: Average loss: 0.0152, Accuracy: 8865/10000 (89%)
+
+Training epoch 88: 100%|██████████| 196/196 [01:22<00:00,  2.37it/s]
+2024-02-24 11:07:16,497 INFO Train Epoch: 88	Loss: 0.017130
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.64it/s]
+2024-02-24 11:07:31,623 INFO Validation set: Average loss: 0.0159, Accuracy: 8853/10000 (89%)
+
+Training epoch 89: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 11:08:55,499 INFO Train Epoch: 89	Loss: 0.016892
+Validation epoch 0: 100%|██████████| 40/40 [00:17<00:00,  2.34it/s]
+2024-02-24 11:09:12,618 INFO Validation set: Average loss: 0.0150, Accuracy: 8890/10000 (89%)
+
+Training epoch 90: 100%|██████████| 196/196 [01:22<00:00,  2.37it/s]
+2024-02-24 11:10:35,552 INFO Train Epoch: 90	Loss: 0.016863
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.68it/s]
+2024-02-24 11:10:50,476 INFO Validation set: Average loss: 0.0150, Accuracy: 8896/10000 (89%)
+
+Training epoch 91: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 11:12:14,492 INFO Train Epoch: 91	Loss: 0.016847
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.63it/s]
+2024-02-24 11:12:29,717 INFO Validation set: Average loss: 0.0148, Accuracy: 8911/10000 (89%)
+
+Training epoch 92: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 11:13:53,280 INFO Train Epoch: 92	Loss: 0.016770
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.61it/s]
+2024-02-24 11:14:08,581 INFO Validation set: Average loss: 0.0146, Accuracy: 8889/10000 (89%)
+
+Training epoch 93: 100%|██████████| 196/196 [01:23<00:00,  2.35it/s]
+2024-02-24 11:15:32,222 INFO Train Epoch: 93	Loss: 0.016796
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.62it/s]
+2024-02-24 11:15:47,471 INFO Validation set: Average loss: 0.0147, Accuracy: 8890/10000 (89%)
+
+Training epoch 94: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 11:17:11,749 INFO Train Epoch: 94	Loss: 0.016783
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.58it/s]
+2024-02-24 11:17:27,238 INFO Validation set: Average loss: 0.0150, Accuracy: 8915/10000 (89%)
+
+Training epoch 95: 100%|██████████| 196/196 [01:22<00:00,  2.36it/s]
+2024-02-24 11:18:50,285 INFO Train Epoch: 95	Loss: 0.016562
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.56it/s]
+2024-02-24 11:19:05,882 INFO Validation set: Average loss: 0.0149, Accuracy: 8888/10000 (89%)
+
+Training epoch 96: 100%|██████████| 196/196 [01:23<00:00,  2.34it/s]
+2024-02-24 11:20:29,663 INFO Train Epoch: 96	Loss: 0.016579
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.55it/s]
+2024-02-24 11:20:45,344 INFO Validation set: Average loss: 0.0157, Accuracy: 8855/10000 (89%)
+
+Training epoch 97: 100%|██████████| 196/196 [01:24<00:00,  2.32it/s]
+2024-02-24 11:22:09,860 INFO Train Epoch: 97	Loss: 0.016625
+Validation epoch 0: 100%|██████████| 40/40 [00:16<00:00,  2.37it/s]
+2024-02-24 11:22:26,747 INFO Validation set: Average loss: 0.0149, Accuracy: 8880/10000 (89%)
+
+Training epoch 98: 100%|██████████| 196/196 [01:25<00:00,  2.30it/s]
+2024-02-24 11:23:52,083 INFO Train Epoch: 98	Loss: 0.016628
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.61it/s]
+2024-02-24 11:24:07,391 INFO Validation set: Average loss: 0.0146, Accuracy: 8907/10000 (89%)
+
+Training epoch 99: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 11:25:31,490 INFO Train Epoch: 99	Loss: 0.016410
+Validation epoch 0: 100%|██████████| 40/40 [00:14<00:00,  2.70it/s]
+2024-02-24 11:25:46,284 INFO Validation set: Average loss: 0.0149, Accuracy: 8870/10000 (89%)
+
+Training epoch 100: 100%|██████████| 196/196 [01:24<00:00,  2.33it/s]
+2024-02-24 11:27:10,592 INFO Train Epoch: 100	Loss: 0.016384
+Validation epoch 0: 100%|██████████| 40/40 [00:15<00:00,  2.58it/s]
+2024-02-24 11:27:26,072 INFO Validation set: Average loss: 0.0145, Accuracy: 8895/10000 (89%)
+
+2024-02-24 11:27:26,073 INFO Validation set: Average loss: 0.0145, Accuracy: 89%
+
+2024-02-24 11:27:26,075 INFO Training time: 9915.75 seconds
+
+Process finished with exit code 0
