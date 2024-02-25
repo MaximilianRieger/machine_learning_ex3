@@ -8,7 +8,7 @@ from second_step.celebA_trainingrun import TrainingRun as CelebATrainingRun
 from second_step.cifar10_trainingrun import TrainingRun as CIFAR10TrainingRun
 
 datasets = ['cifar10', 'celebA']
-models = ['simple', 'resnet', 'resnet50']
+models = ['simple', 'resnet']
 criterions = ['cross_entropy', 'mse']
 
 def run_experiment(args=None):
