@@ -4,6 +4,7 @@ from datasets.load_celebA_samples import load_celebA_samples
 import numpy as np
 import matplotlib.pyplot as plt
 import tqdm
+import os
 
 # create rgb histogram
 def create_rgb_histograms(data):
@@ -22,8 +23,7 @@ def label2string(label):
 
 if __name__ == '__main__':
     # check if the histograms are already created and load them
-    # if not os.path.exists(os.path.join(os.getcwd(), 'train_hist.npy')):
-    if True:
+    if not os.path.exists(os.path.join(os.getcwd(), 'train_hist.npy')):
         print('Creating histograms...')
         # load the celebA dataset
         train_data, train_labels, test_data, test_labels = load_celebA_samples()
